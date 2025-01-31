@@ -24,8 +24,26 @@ ReactDOM.render(
         <Route path="/gruppi" element={<GruppiPage />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/" element={<div>Home Page</div>} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={
+          <div className="page">
+            <div className="carousel-section">
+              <ImageCarousel /> {/* Carosello a sinistra */}
+            </div>
+            <div className="section">
+              <Login /> {/* Modulo di login a destra */}
+            </div>
+          </div>
+        } />   
+        <Route path="/register" element={
+          <div className="page">
+            <div className="carousel-section">
+              <ImageCarousel /> {/* Carosello a sinistra */}
+            </div>
+            <div className="section">
+            <Register /> {/* Modulo di login a destra */}
+            </div>
+          </div>
+        } />   
       </Routes>
     </Router>
   </React.StrictMode>,

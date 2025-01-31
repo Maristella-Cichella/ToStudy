@@ -1,8 +1,9 @@
 
 /*
-#EEEEEE: colore sfondo pagina e navbar;
-#222831: colore scritte, colore link navbar;
-#393E46: colore linee divisorie;
+#EEEEEE (bianco): colore sfondo pagina e navbar;
+#222831 (nero): colore scritte, colore link navbar;
+#393E46 (grigio): colore linee divisorie;
+#00ADB5 (azzurro):
 Roboto: font-family per il testo;
 sans-serif: fallback font-family;
 */
@@ -64,14 +65,20 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
+    position: fixed; /* Fissa la navbar alla posizione desiderata */
+    top: 0; /* Posiziona la navbar in alto */
+    left: 0; /* Posiziona la navbar a sinistra */
+    width: 100%; /* Assicurati che la navbar occupi tutta la larghezza */
+    z-index: 1000; /* Assicura che la navbar sia sopra gli altri contenuti */
+    background-color: #EEEEEE; /* Puoi aggiungere un colore di sfondo per renderla più visibile */
 }
 
-/* LOGO */
+/*Logo*/
 .navbar-brand img {
     height: 40px; 
 }
 
-/* LISTE DI NAVIGAZIONE */
+/*Liste di navigazione*/
 nav ul {
     display: flex;
     list-style-type: none;
@@ -79,13 +86,13 @@ nav ul {
     padding: 0;
 }
 
-/* ELEMENTI DELLA LISTA */
+/*Elementi della vista*/
 nav li {
     margin: 0 10px;
     position: relative; /* necessario per posizionare la sottolineatura */
 }
 
-/* LINK */
+/*Link*/
 nav a {
     text-decoration: none; /* rimuove la sottolineatura dai link */
     color: #222831; 
@@ -94,7 +101,7 @@ nav a {
     display: block;
 }
 
-/* SOTTOLINEATURA */
+/* Sottolineatura*/
 nav a::after {
     content: '';
     position: absolute;
@@ -119,3 +126,91 @@ nav a:hover{
     text-decoration: none;
     color : #222831;
 }
+
+/*CAROSELLO*/
+ .carousel-container {
+    width: 100%; /* Imposta la larghezza del carosello */
+    height: 100vh; /* Imposta l'altezza del carosello */
+    overflow: hidden; /* Nasconde le immagini che escono dal carosello */
+    position: relative;
+  }
+  
+  /* Sezione del carosello (a sinistra) */
+  .carousel-section {
+    flex: 1; /* Il carosello occupa tutta la larghezza disponibile della sezione a sinistra */
+    width: 100%; /* Ogni immagine occupa tutta la larghezza del carosello */
+    height: 100vh; /* Ogni immagine occupa tutta l'altezza del carosello */
+    overflow: hidden; /* Nasconde eventuali contenuti che escono dal carosello */
+    position: relative; /* Necessario per l'overlay o altre proprietà di posizione */
+  }
+  
+  .carousel {
+    display: flex; /* Allinea le immagini orizzontalmente */
+    transition: transform 1s ease-in-out; /* Transizione fluida tra le immagini */
+  }
+  
+  .carousel-slides {
+    display: flex; /* Le immagini sono allineate in una riga */
+    height: 100%; /* Imposta l'altezza al 100% del contenitore */
+    width: 100%; /* Imposta la larghezza al 100% */
+  }
+  
+  .carousel-slides img {
+    width: 100%; /* Ogni immagine occupa tutta la larghezza del carosello */
+    height: 100vh; /* Ogni immagine occupa tutta l'altezza del carosello */
+    object-fit: cover; /* Ritaglia l'immagine per coprire l'intero contenitore */
+  }
+  
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    background-color: #EEEEEE;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .indicator.active {
+    background-color: #393E46; /* Colore quando attivo */
+  }
+  
+  .indicator:hover {
+    background-color: #222831; /* Colore al passaggio del mouse */
+  }
+  
+/*LOGIN*/
+  /* Contenitore principale della pagina di login */
+  .page {
+    display: flex; /* Imposta Flexbox per la divisione a colonne */
+    height: 100vh; /* Imposta l'altezza della finestra del browser */
+  }
+
+  /* Sezione del login (a destra) */
+  .section {
+    flex: 1; /* Il modulo di login occupa metà dello spazio */
+    max-width: 50%; /* Limita la larghezza del modulo di login alla metà della pagina */
+    display: flex;
+    justify-content: center; /* Allinea il modulo di login al centro orizzontalmente */
+    align-items: center; /* Allinea il modulo di login al centro verticalmente */
+    height: 100vh; /* Altezza completa della finestra */
+    background-color: #EEEEEE; /* Colore di sfondo per la sezione di login */
+  }
+
+  /* Stilizzazione del modulo di login */
+  .section form {
+    width: 80%; /* Larghezza del modulo */
+    padding: 30px;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
