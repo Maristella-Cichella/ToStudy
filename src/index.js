@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./Style.css";
+import './Function.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./NavBar";
 import Register from "./Register";
-import "./index.css";
 import AppuntiPage from "./AppuntiPage";
 import EsploraPage from "./EsploraPage";
 import GruppiPage from "./GruppiPage";
